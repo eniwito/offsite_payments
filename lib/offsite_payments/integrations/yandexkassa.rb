@@ -115,7 +115,7 @@ module OffsitePayments #:nodoc:
           dt = Time.now.iso8601
           "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
               "<#{method}Response performedDatetime=\"#{dt}\" code=\"#{@response_code}\"" +
-              " invoiceId=\"#{transaction_id}\" shopId=\"#{shop_id}\"/>"
+              " invoiceId=\"#{transaction_id}\" shopId=\"#{shop_id}\" orderSumAmount=\"#{gross}\"/>"
         end
 
         # Acknowledge the transaction to YandexMoney. This method has to be called after a new
