@@ -25,22 +25,12 @@ module OffsitePayments #:nodoc:
         Notification.new(post)
       end
 
-      # class Helper < OffsitePayments::Helper
-      #   def initialize(order, account, options = {})
-      #     super
-      #     add_field('shopId', '_ext-enter')
-      #     add_field('scid', '_xclick')
-      #     # add_field('sum', 1)
-      #     # add_field('customerNumber', 'Store purchase')
-      #   end
-      # end
-
       class Helper < OffsitePayments::Helper
         mapping :account, 'customerNumber'
         mapping :amount, 'sum'
         mapping :order, 'orderNumber'
         mapping :notify_url, 'shopNotifyURL'
-        mapping :return_url, 'shopSuccessURL'
+        mapping :shopSuccessURL, 'shopSuccessURL'
         mapping :shopFailURL, 'shopFailURL'
         # mapping :cancel_return_url, ''
         mapping :description, 'orderDetails'
