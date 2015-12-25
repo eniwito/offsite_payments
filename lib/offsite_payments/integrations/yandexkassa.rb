@@ -46,6 +46,8 @@ module OffsitePayments #:nodoc:
       end
 
       class Notification < OffsitePayments::Notification
+        attr_accessor :message
+
         def initialize(post, options = {})
           super
           @response_code = '200'
@@ -115,7 +117,9 @@ module OffsitePayments #:nodoc:
           dt = Time.now.iso8601
           "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
               "<#{method}Response performedDatetime=\"#{dt}\" code=\"#{@response_code}\"" +
-              " invoiceId=\"#{transaction_id}\" shopId=\"#{shop_id}\" orderSumAmount=\"#{gross}\"/>"
+              " invoiceId=\"#{transaction_id}\" shopId=\"#{shop_id}\" orderSumAmount=\"#{gross}\""+
+              "#{" message=\"#{message}\"" if message}" +
+              "/>"
         end
 
         # Acknowledge the transaction to YandexMoney. This method has to be called after a new
