@@ -42,7 +42,8 @@ module OffsitePayments #:nodoc:
         mapping :scid, 'scid'
         mapping :shopId, 'shopId'
         mapping :shopArticleId, 'shopArticleId'
-        mapping :paymentType , 'paymentType'
+        mapping :paymentType, 'paymentType'
+        mapping :seller_id, 'seller_id'
       end
 
       class Notification < OffsitePayments::Notification
