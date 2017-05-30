@@ -32,7 +32,7 @@ module OffsitePayments #:nodoc:
         mapping :notify_url, 'shopNotifyURL'
         mapping :shopSuccessURL, 'shopSuccessURL'
         mapping :shopFailURL, 'shopFailURL'
-        # mapping :cancel_return_url, ''
+        mapping :cancel_return_url, 'shopDefaultUrl'
         mapping :description, 'orderDetails'
 
         mapping :customer, :email => 'cps_email',

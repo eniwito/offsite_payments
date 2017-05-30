@@ -22,23 +22,13 @@ Gem::Specification.new do |s|
   s.files = Dir['CHANGELOG', 'README.md', 'MIT-LICENSE', 'lib/**/*']
   s.require_path = 'lib'
 
-  s.add_dependency('activesupport', '>= 3.2.14', '< 5.1')
+  s.add_dependency('activesupport', '>= 3.2.14', '< 6.x')
   s.add_dependency('i18n', '~> 0.5')
   s.add_dependency('money', '< 7.0.0')
   s.add_dependency('builder', '>= 2.1.2', '< 4.0.0')
-  # TODO исправить
-  # Bundler could not find compatible versions for gem "active_utils":
-  # In Gemfile:
-  #   offsite_payments (>= 0) ruby depends on
-  #     active_utils (~> 3.2.0) ruby
-  #
-  #   spree (= 2.3.10) ruby depends on
-  #     spree_core (= 2.3.10) ruby depends on
-  #       activemerchant (~> 1.44.1) ruby depends on
-  #         active_utils (~> 2.2.0) ruby
-  s.add_dependency('active_utils', '~> 2.2.0')
-  s.add_dependency('nokogiri', "~> 1.4")
-  s.add_dependency('actionpack', ">= 3.2.20", "< 5.1")
+  s.add_dependency('active_utils', '~> 3.3.0')
+  s.add_dependency('nokogiri', "~> 1.6")
+  s.add_dependency('actionpack', '>= 3.2.20', '< 6.x')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('test-unit', '~> 3.0')
